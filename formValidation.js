@@ -165,9 +165,7 @@ export const ACCEPT_TERMS_FORM_VALIDATION = Yup.object().shape({
     .required()
     .oneOf([true], "同意の上、次へお進みください"),
 });
-/**
- * NFT購入
- */
+
 // 抽選、定価販売
 export const QUANTITY_VALIDATION = Yup.lazy((values) => {
   switch (values.payment) {
@@ -384,12 +382,4 @@ export const SERIAL_NUMBER_FORM_VALIDATION = Yup.object().shape({
     .min(1, "シリアルナンバーを指定してください")
     // .required("シリアルナンバーを指定してください")
     .nullable(),
-});
-/**
- * NFT管理
- * NFT新規作成
- * TODO バリデーション追加
- */
-export const NFT_FORM_VALIDATION = Yup.object().shape({
-  benefitsChoice: Yup.string().required("特典を付与するか選択してください"),
 });
